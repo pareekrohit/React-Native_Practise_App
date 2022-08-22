@@ -32,18 +32,23 @@ class StateExScreen extends Component {
           onChangeText={e => {
             this.setState({name: e});
           }}></TextInput>
-        <Button
-          title="Change state data"
-          style={styles.buttonStyle}
-          onPress={() => {
-            this.setState({data: 'New State data updated'});
-          }}></Button>
-        <Button
-          title="Change state name"
-          style={styles.buttonStyle}
-          onPress={() => {
-            this.setState({name: 'Akash'});
-          }}></Button>
+
+        <View style={styles.buttonStyle}>
+          <Button
+            title="Change state data"
+            onPress={() => {
+              this.setState({data: 'New State data updated'});
+            }}
+          />
+        </View>
+        <View style={styles.buttonStyle}>
+          <Button
+            title="Change state name"
+            onPress={() => {
+              this.setState({name: 'Akash'});
+            }}
+          />
+        </View>
       </SafeAreaView>
     );
   }
@@ -52,10 +57,11 @@ class StateExScreen extends Component {
 const styles = StyleSheet.create({
   titleStyle: {
     fontSize: 30,
-    fontFamily: 'Cormorant-Regular',
+    fontFamily: 'Corm',
     color: 'white',
-    backgroundColor: 'red',
+    backgroundColor: 'green',
     marginBottom: 10,
+    paddingHorizontal: 20,
   },
 
   textInputStyle: {
@@ -68,7 +74,7 @@ const styles = StyleSheet.create({
 
   buttonStyle: {
     marginHorizontal: 20,
-    marginBottom: 20,
+    marginTop: 10,
   },
 
   red: {

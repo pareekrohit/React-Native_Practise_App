@@ -1,4 +1,13 @@
 {
   "migIndex": 1,
-  "data": []
+  "data": [
+    {
+      "path": "assets/fonts/bluenesia.ttf",
+      "sha1": "cbac98c111b8c6d26027118f749eb4e9e534d963"
+    },
+    {
+      "path": "assets/fonts/corm.ttf",
+      "sha1": "38b26cfd6fb2823a0cbec43bf6cfe94709391c1a"
+    }
+  ]
 }
