@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import OnBoardingscreen from '../ProjectDemo/src/OnBoardingscreen';
 import Login from './src/Login.js';
+import Registration from './src/Registration';
 
 const Stack = createNativeStackNavigator();
 // initialRouteName="OnBoardingdscreen"
@@ -20,6 +21,12 @@ const App = () => {
           options={{headerShown: false}}
           name="Login"
           component={Login}
+        />
+
+        <Stack.Screen
+          options={{headerShown: false}}
+          name="Registration"
+          component={Registration}
         />
       </Stack.Navigator>
     </NavigationContainer>
