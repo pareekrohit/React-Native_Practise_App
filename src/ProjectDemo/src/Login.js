@@ -31,7 +31,6 @@ const Login = ({navigation}) => {
           style={styles.headerImage}
           source={require('../../../assets/images/login.jpg')}
         />
-
         <Text
           style={{
             fontFamily: 'Roboto-Medium',
@@ -42,15 +41,12 @@ const Login = ({navigation}) => {
           }}>
           Login
         </Text>
-
         <TextInput placeholder="Email" style={styles.input} />
-
         <TextInput
           placeholder="Password"
           style={[styles.input, {marginBottom: 5}]}
           secureTextEntry={true}
         />
-
         <View
           style={{
             width: '100%',
@@ -64,7 +60,6 @@ const Login = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
-
         {/* <TouchableOpacity
           onPress={() => {}}
           style={{
@@ -90,15 +85,13 @@ const Login = ({navigation}) => {
           <CustomButton
             label={'Login'}
             onPress={() => {
-              navigation.goBack();
+              navigation.navigate('Dashboard');
             }}
           />
         </View>
-
         <Text style={{textAlign: 'center', color: '#666', marginBottom: 30}}>
           Or, login with ..
         </Text>
-
         <View
           style={{
             width: '100%',
@@ -154,7 +147,6 @@ const Login = ({navigation}) => {
             />
           </TouchableOpacity>
         </View>
-
         <View style={{flexDirection: 'row', justifyContent: 'center'}}>
           <Text style={{fontWeight: '700'}}>New to the app?</Text>
           <TouchableOpacity
