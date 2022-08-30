@@ -60,32 +60,12 @@ const Login = ({navigation}) => {
             </Text>
           </TouchableOpacity>
         </View>
-        {/* <TouchableOpacity
-          onPress={() => {}}
-          style={{
-            width: '100%',
-            backgroundColor: '#AD40AF',
-            padding: 15,
-            borderRadius: 10,
-            marginBottom: 30,
-            alignItems: 'center',
-          }}>
-          <Text
-            style={{
-              fontFamily: 'Roboto-Medium',
-              fontWeight: '700',
-              fontSize: 16,
-              color: 'white',
-            }}>
-            Login
-          </Text>
-        </TouchableOpacity> */}
 
         <View style={{width: '100%', marginBottom: 20}}>
           <CustomButton
             label={'Login'}
             onPress={() => {
-              navigation.navigate('Dashboard');
+              navigation.navigate('Drawer');
             }}
           />
         </View>

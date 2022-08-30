@@ -1,95 +1,14 @@
-import * as React from 'react';
-import {
-  View,
-  Image,
-  Text,
-  Button,
-  StyleSheet,
-  SafeAreaView,
-  Touchable,
-  TouchableOpacity,
-} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {View, Text, StyleSheet, Settings, Image} from 'react-native';
+import React from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import HomeScreen from './HomeScreen';
+import Post from './PostScreen';
+import ChatScreen from './ChatScreen';
+import SettingsScreen from './SettingsScreen';
 
-// import {createDrawerNavigator} from '@react-navigation/drawer';
+const Tab = createBottomTabNavigator();
 
-import SideDrawer from './src/sideDrawer/DrawerContent';
-import OnBoardingscreen from '../ProjectDemo/src/OnBoardingscreen';
-import Login from './src/Login.js';
-import Registration from './src/Registration';
-
-// import Post from './src/dashboard/PostScreen';
-// import HomeScreen from './src/dashboard/HomeScreen';
-// import ChatScreen from './src/dashboard/ChatScreen';
-// import Settings from './src/dashboard/SettingsScreen';
-
-const Stack = createNativeStackNavigator();
-// const Tab = createBottomTabNavigator();
-// const Drawer = createDrawerNavigator();
-
-const App = () => {
-  return (
-    <NavigationContainer>
-      {/* <SideDrawer /> */}
-
-      <Stack.Navigator headerMode="none">
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="OnBoarding"
-          component={OnBoardingscreen}
-        />
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="Login"
-          component={Login}
-        />
-        <Stack.Screen
-          options={{headerShown: false}}
-          name="Registration"
-          component={Registration}
-        />
-
-        {/* <Stack.Screen
-          options={{headerShown: false}}
-          name="Dashboard"
-          component={DashboardTab}
-        /> */}
-
-        <Stack.Screen
-          name="Drawer"
-          component={SideDrawer}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-};
-
-const CustomTabBarButton = props => {
-  const {children, onPress} = props;
-  <TouchableOpacity
-    style={{
-      top: -30,
-      justifyContent: 'center',
-      alignItems: 'center',
-      ...styles.shadow,
-    }}
-    onPress={onPress}>
-    <View
-      style={{
-        width: 70,
-        height: 70,
-        borderRadius: 35,
-        backgroundColor: '#e32f45',
-      }}>
-      {children}
-    </View>
-  </TouchableOpacity>;
-};
-
-export const DashboardTab = () => {
+export default function DashboardTab() {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -98,15 +17,18 @@ export const DashboardTab = () => {
         headerShown: false,
 
         tabBarStyle: {
-          position: 'absolute',
-          bottom: 25,
-          left: 20,
-          right: 20,
+          // position: 'absolute',
+          // bottom: 25,
+          // left: 20,
+          // right: 20,
+          width: '95%',
+          alignSelf: 'center',
+          marginBottom: 20,
           elevation: 0,
           backgroundColor: '#ffffff',
           borderRadius: 10,
-          paddingVertical: 2,
-          paddingHorizontal: 2,
+          // paddingVertical: 2,
+          // paddingHorizontal: 2,
           height: 65,
           ...styles.shadow,
         },
@@ -121,7 +43,7 @@ export const DashboardTab = () => {
             <View
               style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
               <Image
-                source={require('../../assets/images/home_icon.png')}
+                source={require('../../../../assets/images/home_icon.png')}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -147,7 +69,7 @@ export const DashboardTab = () => {
             <View
               style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
               <Image
-                source={require('../../assets/images/post_icon.png')}
+                source={require('../../../../assets/images/post_icon.png')}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -171,7 +93,7 @@ export const DashboardTab = () => {
           tabBarLabel: '',
           tabBarIcon: ({focused}) => (
             <Image
-              source={require('../../assets/images/plus_icon.png')}
+              source={require('../../../../assets/images/plus_icon.png')}
               resizeMode="contain"
               style={{
                 width: 30,
@@ -194,7 +116,7 @@ export const DashboardTab = () => {
             <View
               style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
               <Image
-                source={require('../../assets/images/chat_icon.png')}
+                source={require('../../../../assets/images/chat_icon.png')}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -212,14 +134,14 @@ export const DashboardTab = () => {
       />
       <Tab.Screen
         name="Settings"
-        component={Settings}
+        component={SettingsScreen}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({focused}) => (
             <View
               style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
               <Image
-                source={require('../../assets/images/settings_icon.png')}
+                source={require('../../../../assets/images/settings_icon.png')}
                 resizeMode="contain"
                 style={{
                   width: 25,
@@ -237,19 +159,18 @@ export const DashboardTab = () => {
       />
     </Tab.Navigator>
   );
-};
+}
+// 7F5DF0
 
-// const styles = StyleSheet.create({
-//   shadow: {
-//     shadowColor: '#7F5DF0',
-//     shadowOffset: {
-//       width: 0,
-//       height: 10,
-//     },
-//     shadowOpacity: 0.25,
-//     shadowRadius: 3.5,
-//     elevation: 5,
-//   },
-// });
-
-export default App;
+const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: '#7F5DF0',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    elevation: 6,
+  },
+});

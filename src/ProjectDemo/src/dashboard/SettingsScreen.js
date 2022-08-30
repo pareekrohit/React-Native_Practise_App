@@ -6,11 +6,18 @@ import {
   StyleSheet,
   SafeAreaView,
   TextInput,
+  StatusBar,
+  RefreshControl,
+  Switch,
   TouchableOpacity,
 } from 'react-native';
-import {WithLocalSvg} from 'react-native-svg';
+import Icon from 'react-native-vector-icons/Entypo';
 
-const Settings = () => {
+import {SettingsData, Chevron} from './lib';
+
+const fontFamily = Platform.OS === 'ios' ? 'Avenir' : 'sans-serif';
+
+const SettingsScreen = () => {
   return (
     <SafeAreaView
       style={{
@@ -24,19 +31,4 @@ const Settings = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  input: {
-    borderColor: '#AD40AF',
-    borderRadius: 5,
-    borderWidth: 1,
-    height: 40,
-    width: '100%',
-    padding: 10,
-    marginHorizontal: 20,
-    marginBottom: 25,
-  },
-
-  headerImage: {height: 120, width: 180, alignSelf: 'center'},
-});
-
-export default Settings;
+export default SettingsScreen;
